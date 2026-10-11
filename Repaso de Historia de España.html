@@ -1,0 +1,1112 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Repaso de Historia de España</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Disposición: app de una columna para móvil. Cabecera fija con el avance, contenido que desliza y barra inferior con 5 pestañas.
+   Cada bloque de los apuntes conserva su color (--c) en todas las vistas, como los periodos de un atlas. */
+:root{
+  --f-display:'Alegreya',Georgia,'Times New Roman',serif;
+  --f-body:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --bg:#EDF0F4; --surface:#FFFFFF; --surface-2:#F4F6F9;
+  --ink:#101A2B; --ink-2:#3F4C60; --ink-3:#5B687A;
+  --line:#D3D9E2; --line-2:#E4E8EF; --focus:#2F5BEA;
+  --good:#17784A; --bad:#B3261E;
+  --c-roma:#7A45C2; --c-visi:#B7701A; --c-and:#1F8A57; --c-cortes:#3A62C8;
+  --c-desc:#0D86A4; --c-imp:#C13B2D; --c-oliv:#C03F7B; --c-crisis:#6E8A14;
+  --r:4px; --gut:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1320; --surface:#141D2D; --surface-2:#1A2539;
+    --ink:#E8EDF5; --ink-2:#B5C0D2; --ink-3:#8E9BB0;
+    --line:#2B3850; --line-2:#222E43; --focus:#8EB0FF;
+    --good:#4CC38A; --bad:#FF8F84;
+    --c-roma:#A982E6; --c-visi:#E0A04A; --c-and:#48C28A; --c-cortes:#7B9BF0;
+    --c-desc:#3FC0DE; --c-imp:#F0776A; --c-oliv:#EC7BAE; --c-crisis:#A4C447;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1320; --surface:#141D2D; --surface-2:#1A2539;
+  --ink:#E8EDF5; --ink-2:#B5C0D2; --ink-3:#8E9BB0;
+  --line:#2B3850; --line-2:#222E43; --focus:#8EB0FF;
+  --good:#4CC38A; --bad:#FF8F84;
+  --c-roma:#A982E6; --c-visi:#E0A04A; --c-and:#48C28A; --c-cortes:#7B9BF0;
+  --c-desc:#3FC0DE; --c-imp:#F0776A; --c-oliv:#EC7BAE; --c-crisis:#A4C447;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.5 var(--f-body);-webkit-text-size-adjust:100%;overflow-x:hidden}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:640px;margin-inline:auto;padding-inline:var(--gut)}
+.lab{font:600 11px/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* botones y chips */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--ink);border-radius:var(--r);background:transparent;font:700 15px/1 var(--f-body)}
+.btn.pri{background:var(--ink);color:var(--surface)}
+.btn.sm{min-height:36px;padding:0 12px;font-size:14px}
+.btn[disabled]{opacity:.45;cursor:default}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-block:2px 6px;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font:700 13px/1 var(--f-body);color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.chip .dot{width:9px;height:9px;border-radius:2px;background:var(--c)}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 8px 5px 6px;border-radius:2px;background:color-mix(in srgb,var(--c) 16%,var(--surface));color:var(--ink);font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.tag::before{content:'';width:8px;height:8px;border-radius:1px;background:var(--c)}
+.seg{display:flex;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.seg button{flex:1;min-height:40px;border:0;background:transparent;font:700 13px/1.1 var(--f-body);color:var(--ink-2);padding:0 8px}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.h2{font:800 24px/1.15 var(--f-display);text-wrap:balance}
+.intro{color:var(--ink-2);font-size:15px;max-width:60ch}
+.sec{display:flex;flex-direction:column;gap:14px;padding-block:18px 0}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* cabecera */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
+.brand{display:flex;flex-direction:column;gap:2px;min-width:0}
+.brand h1{font:800 21px/1.05 var(--f-display)}
+.meter{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:0 0 auto}
+.meter b{font:600 12px/1 var(--f-mono);color:var(--ink-2)}
+.bar{width:96px;height:5px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .3s}
+/* contenido */
+.app{padding-block:6px 96px}
+.panel{display:flex;flex-direction:column;gap:14px;padding-top:14px}
+/* barra inferior */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabs .wrap{display:grid;grid-template-columns:repeat(5,1fr);padding-inline:4px}
+.tabs button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:58px;border:0;background:transparent;color:var(--ink-3);font:700 11px/1 var(--f-body)}
+.tabs button[aria-selected="true"]{color:var(--ink)}
+.tabs button[aria-selected="true"]::before{content:'';position:absolute;top:0;left:24%;right:24%;height:3px;background:var(--ink)}
+.tabs svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabs .n{position:absolute;top:6px;left:calc(50% + 7px);min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--ink);color:var(--surface);font:600 10px/17px var(--f-mono);text-align:center}
+.tabs .n:empty{display:none}
+/* esquemas */
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.bloques{display:flex;flex-direction:column;gap:14px;padding-top:4px}
+.bloque{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.bloque::before{content:'';position:absolute;left:14px;top:-4px;width:48px;height:4px;border-radius:2px 2px 0 0;background:var(--c)}
+.bloque>summary{list-style:none;display:grid;gap:7px;padding:14px;cursor:pointer}
+.bloque>summary::-webkit-details-marker{display:none}
+.bq-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.bq-name{font:800 21px/1.12 var(--f-display);text-wrap:balance}
+.bq-hook{color:var(--ink-2);font-size:14px}
+.bq-span{font:500 12px/1 var(--f-mono);color:var(--ink-3)}
+.chev{flex:0 0 auto;width:18px;height:18px;stroke:var(--ink-3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .15s}
+.bloque[open]>summary .chev{transform:rotate(180deg)}
+.ramas{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
+.rama{border-bottom:1px solid var(--line-2)}
+.rama:last-child{border-bottom:0}
+.rama>summary{list-style:none;display:flex;gap:11px;align-items:flex-start;padding:12px 14px;min-height:48px;cursor:pointer}
+.rama>summary::-webkit-details-marker{display:none}
+.rama .mk{flex:0 0 auto;width:9px;height:9px;margin-top:7px;border-radius:2px;background:var(--c);transition:transform .15s}
+.rama[open]>summary .mk{transform:rotate(45deg)}
+.rama .rt{font-weight:700}
+.rama .rm{display:block;margin-top:4px;font:500 12px/1.4 var(--f-mono);color:var(--ink-2)}
+.rama ul{display:flex;flex-direction:column;gap:7px;padding:0 14px 14px 34px;color:var(--ink-2);font-size:15px}
+.rama li{position:relative}
+.rama li::before{content:'';position:absolute;left:-13px;top:.62em;width:6px;height:1px;background:var(--ink-3)}
+.tw{overflow-x:auto;margin:2px 14px 14px;border:1px solid var(--line-2);border-radius:var(--r)}
+.tw table{width:100%;min-width:430px;border-collapse:collapse;font-size:13px}
+.tw th{padding:8px;text-align:left;background:var(--surface-2);color:var(--ink-3);font:600 11px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.tw td{padding:8px;border-top:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+.tw td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+.tw caption{caption-side:top;padding:10px 8px 0;text-align:left}
+.bq-right{display:flex;align-items:center;gap:10px}
+/* frisa cronológica (a escala) */
+.frisa{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 12px 8px}
+.fr-rows{position:relative;display:flex;flex-direction:column;gap:2px}
+.fr-tick{position:absolute;top:0;bottom:0;width:1px;background:var(--line-2)}
+.fr-row{position:relative;display:block;width:100%;height:24px;padding:0;border:0;background:transparent;text-align:left;transition:opacity .15s}
+.fr-bar{position:absolute;top:7px;height:10px;min-width:6px;border-radius:2px;background:var(--c)}
+.fr-lab{position:absolute;top:0;font:700 11px/24px var(--f-body);color:var(--ink-2);white-space:nowrap}
+.frisa[data-f] .fr-row{opacity:.38}
+.frisa[data-f] .fr-row[aria-pressed="true"]{opacity:1}
+.fr-axis{position:relative;height:16px;margin-top:4px;font:500 10px/16px var(--f-mono);color:var(--ink-3)}
+.fr-axis span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.fr-hint{margin-top:4px;font-size:12px;color:var(--ink-3)}
+/* línea del tiempo */
+.cnt{font:500 12px/1 var(--f-mono);color:var(--ink-3)}
+.tl{display:flex;flex-direction:column}
+.ev{display:grid;grid-template-columns:84px 14px minmax(0,1fr);column-gap:9px}
+.ev-y{padding-top:10px;text-align:right;font:600 13px/1.25 var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.ev-rail{position:relative}
+.ev-rail::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--line)}
+.ev:first-child .ev-rail::before{top:14px}
+.ev:last-child .ev-rail::before{bottom:calc(100% - 22px)}
+.ev-rail i{position:absolute;left:1px;top:12px;width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px var(--bg)}
+.ev-body{padding:7px 0 14px;min-width:0}
+.ev-t{font-weight:700;line-height:1.3}
+.ev-d{margin-top:2px;color:var(--ink-2);font-size:14px}
+.ev-m{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:7px}
+.cov{display:flex;align-items:center;justify-content:center;width:100%;min-height:36px;padding:0 10px;border:1px dashed var(--ink-3);border-radius:2px;background:var(--surface-2);color:var(--ink-3);font:600 12px/1 var(--f-mono);cursor:pointer}
+.ev-body .cov{min-height:46px}
+.flag{padding:4px 7px;border:1px solid var(--bad);border-radius:2px;background:transparent;color:var(--bad);font:600 11px/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase}
+.empty{padding:28px 12px;text-align:center;color:var(--ink-3)}
+/* tarjetas */
+.fc-sum{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+.fc-sum b{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.sess{display:flex;align-items:center;gap:12px}
+.sess .bar{flex:1;width:auto}
+.fc{position:relative;display:flex;flex-direction:column;gap:16px;min-height:340px;padding:18px 16px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 14px 26px -22px rgba(16,26,43,.55)}
+.fc::before{content:'';position:absolute;left:14px;top:-4px;width:48px;height:4px;border-radius:2px 2px 0 0;background:var(--c)}
+.fc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.fc-q{font:700 27px/1.2 var(--f-display);text-wrap:balance}
+.fc-rule{height:2px;background:var(--c)}
+.fc-a{font-size:19px;line-height:1.45}
+.fc-foot{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.fc-hint{font-size:13px;color:var(--ink-3);text-align:center}
+.grades{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.g{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:60px;padding:6px;border:1px solid var(--ink);border-radius:var(--r);background:transparent;font:700 14px/1.15 var(--f-body);text-align:center}
+.g small{font:500 11px/1 var(--f-mono);color:var(--ink-3)}
+.g.ok{background:var(--ink);color:var(--surface)}
+.g.ok small{color:inherit;opacity:.8}
+.done{display:flex;flex-direction:column;gap:12px;padding:22px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.done .big{font:800 30px/1.1 var(--f-display);text-wrap:balance}
+.row-btn{display:flex;gap:8px;flex-wrap:wrap}
+/* test */
+.qbox{display:flex;flex-direction:column;gap:14px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.qt{font:700 23px/1.22 var(--f-display);text-wrap:balance}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:12px;min-height:54px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface-2);text-align:left;font:400 16px/1.3 var(--f-body)}
+.opt .k{flex:0 0 auto;display:grid;place-items:center;width:26px;height:26px;border:1px solid var(--ink-3);border-radius:2px;font:600 12px/1 var(--f-mono);color:var(--ink-2)}
+.opt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 14%,var(--surface))}
+.opt.right .k{border-color:var(--good);background:var(--good);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--surface))}
+.opt.wrong .k{border-color:var(--bad);background:var(--bad);color:var(--surface)}
+.opt[disabled]{cursor:default}
+.fb{padding:10px 12px;border-radius:var(--r);background:var(--surface-2);font-size:14px;color:var(--ink-2)}
+.score{font:800 64px/1 var(--f-display)}
+.miss{display:flex;flex-direction:column;gap:10px}
+.miss li{padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);font-size:14px;color:var(--ink-2)}
+.miss b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+/* dudas */
+.dd{display:flex;flex-direction:column;gap:10px;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.dd.hl{outline:2px solid var(--focus);outline-offset:2px}
+.dd h3{font:800 19px/1.2 var(--f-display);text-wrap:balance}
+.dd .r{display:grid;gap:3px}
+.dd .r p{font-size:15px;color:var(--ink-2)}
+.sev{align-self:flex-start;padding:4px 7px;border:1px solid var(--ink-3);border-radius:2px;color:var(--ink-2);font:600 11px/1 var(--f-mono);letter-spacing:.05em;text-transform:uppercase}
+.sev.g1{border-color:var(--bad);color:var(--bad)}
+.note{padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface-2);font-size:14px;color:var(--ink-2)}
+</style>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Historia de España</h1>
+      <span class="lab">Repaso de tus apuntes</span>
+    </div>
+    <div class="meter" title="Tarjetas que ya dominas">
+      <b id="meterTxt">0 de 0</b>
+      <div class="bar"><i id="meterBar"></i></div>
+    </div>
+  </div>
+</header>
+
+<main class="app wrap" id="main">
+  <section class="panel" id="p-esquema" role="tabpanel" aria-labelledby="t-esquema"></section>
+  <section class="panel" id="p-fechas" role="tabpanel" aria-labelledby="t-fechas" hidden></section>
+  <section class="panel" id="p-tarjetas" role="tabpanel" aria-labelledby="t-tarjetas" hidden></section>
+  <section class="panel" id="p-test" role="tabpanel" aria-labelledby="t-test" hidden></section>
+  <section class="panel" id="p-dudas" role="tabpanel" aria-labelledby="t-dudas" hidden></section>
+</main>
+
+<nav class="tabs" role="tablist" aria-label="Secciones">
+  <div class="wrap">
+    <button role="tab" id="t-esquema" data-tab="esquema" aria-selected="true" aria-controls="p-esquema">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v14M6 7h13M6 12h9M6 18h11"/></svg><span>Esquema</span>
+    </button>
+    <button role="tab" id="t-fechas" data-tab="fechas" aria-selected="false" aria-controls="p-fechas">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><circle cx="12" cy="7" r="2.2"/><circle cx="12" cy="16" r="2.2"/><path d="M15 7h5M4 16h5"/></svg><span>Fechas</span>
+    </button>
+    <button role="tab" id="t-tarjetas" data-tab="tarjetas" aria-selected="false" aria-controls="p-tarjetas">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="1.5"/><path d="M7 4h10"/></svg><span>Tarjetas</span><span class="n" id="nTarjetas"></span>
+    </button>
+    <button role="tab" id="t-test" data-tab="test" aria-selected="false" aria-controls="p-test">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8.5 12.2 2.5 2.5 4.5-5"/></svg><span>Test</span>
+    </button>
+    <button role="tab" id="t-dudas" data-tab="dudas" aria-selected="false" aria-controls="p-dudas">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4M6 5h12l-2.5 4L18 13H6"/></svg><span>Dudas</span><span class="n" id="nDudas"></span>
+    </button>
+  </div>
+</nav>
+<script>
+/* ===== DATOS 1: bloques y cronología (todo sale de los apuntes) ===== */
+const BLOQUES=[
+{id:'roma',tema:'Tema 1',n:'Conquista romana',c:'Roma',a:-218,b:409},
+{id:'visi',tema:'Tema 1',n:'Hispania visigoda',c:'Visigodos',a:409,b:711},
+{id:'and',tema:'Tema 2',n:'Al-Andalus',c:'Al-Andalus',a:711,b:1492},
+{id:'cortes',tema:'Tema 3',n:'Cortes medievales',c:'Cortes',a:1188,b:1230},
+{id:'desc',tema:'Tema 6',n:'Descubrimiento de América',c:'América',a:1487,b:1542},
+{id:'imp',tema:'Siglo XVI',n:'Carlos V y Felipe II',c:'Imperio',a:1516,b:1598},
+{id:'oliv',tema:'Tema 8',n:'El valido Olivares',c:'Olivares',a:1621,b:1652},
+{id:'crisis',tema:'Siglo XVII',n:'Crisis del siglo XVII',c:'Crisis XVII',a:1598,b:1700}
+];
+
+/* [bloque, año, etiqueta de rango, título, detalle, quiz(0=no), duda] */
+const EVENTOS=[
+['roma',-219,'','Aníbal toma Sagunto','Detonante de la II Guerra Púnica'],
+['roma',-218,'','Desembarcan los Escipiones','Roma entra en la Península y empieza la conquista'],
+['roma',-218,'218–202 a.C.','II Guerra Púnica','Roma contra Cartago; vence Roma'],
+['roma',-202,'','Termina la II Guerra Púnica','Victoria romana; la romanización avanza despacio'],
+
+['visi',313,'','Edicto de Milán','Constantino y el cristianismo',1,'edictos'],
+['visi',380,'','Edicto de Tesalónica','Teodosio: el cristianismo, religión oficial del Imperio',1,'edictos'],
+['visi',409,'','Suevos, vándalos y alanos entran en Hispania','Cruzan los Pirineos'],
+['visi',418,'','Reino visigodo de Tolosa (Francia)','Esplendor con el Código de Eurico, primera recopilación de leyes germanas'],
+['visi',507,'','Batalla de Vouillé','Los francos vencen; los visigodos pasan a Hispania con capital en Toledo'],
+['visi',589,'','III Concilio de Toledo','Recaredo se convierte al catolicismo: unidad religiosa'],
+['visi',654,'','Liber Iudiciorum','Recesvinto: unidad jurídica'],
+
+['and',711,'','Batalla de Guadalete (Cádiz)','Muere don Rodrigo; los musulmanes toman el reino visigodo'],
+['and',714,'714–756','Valiato (emirato dependiente)','21 gobernadores; choque entre árabes y bereberes'],
+['and',722,'','Covadonga','Política exterior del valiato'],
+['and',732,'','Poitiers','Política exterior del valiato'],
+['and',741,'','Sublevación de los bereberes','Política interior del valiato'],
+['and',750,'','Matanza de los Omeya','Origen del emirato independiente'],
+['and',756,'756–929','Abderramán I: emirato independiente','Pacifica Al-Andalus y crea la mezquita de Córdoba'],
+['and',778,'','Roncesvalles','Bajo Abderramán I'],
+['and',797,'','Jornada del Foso (Toledo)','Bajo Al-Hakam I'],
+['and',818,'','Revuelta de los Arrabales (Córdoba)','Bajo Al-Hakam I'],
+['and',929,'929–1031','Califato de Córdoba','Abderramán III (929-961) manda construir Medina Azahara'],
+['and',961,'','Al-Hakam II «el Sabio»','Biblioteca de 400.000 volúmenes'],
+['and',1002,'','Batalla de Calatañazor (Soria)','Almanzor, tras unas 50 campañas contra los cristianos, muere herido'],
+['and',1031,'','Fitna: se desintegra el Califato','Caos político; nacen los primeros reinos de Taifas'],
+['and',1085,'','Alfonso VI conquista la Taifa de Toledo','Fin de los primeros Taifas'],
+['and',1086,'1086–1144','Batalla de Sagrajas (Badajoz)','Derrota de Alfonso VI; llegan los almorávides'],
+['and',1147,'1147–1212','Almohades','Tras los segundos Taifas'],
+['and',1195,'','Batalla de Alarcos (Ciudad Real)','Almohades'],
+['and',1212,'','Batalla de las Navas de Tolosa (Jaén)','Alfonso VIII derrota a los almohades'],
+['and',1236,'1236–1492','Reino nazarí de Granada','Capital en Granada; ojo con la fecha en «Dudas»',0,'nazari'],
+['and',1340,'','Batalla del Salado','Benimerines'],
+['and',1492,'','Conquista de Granada','Cae el último reino musulmán'],
+
+['cortes',1188,'','Primeras Cortes de España (León)','Alfonso IX; asisten representantes de las ciudades'],
+['cortes',1230,'','Castilla y León, unidas','Fernando III el Santo; Cortes únicas de 3 brazos'],
+
+['desc',1487,'','Bartolomé Díaz: Cabo de Buena Esperanza','Descubrimiento portugués'],
+['desc',1492,'','Capitulaciones de Santa Fe','Colón y los Reyes Católicos pactan privilegios y beneficios'],
+['desc',1492,'','Colón sale de Palos (3 de agosto)','Nao Santa María y carabelas Pinta y Niña; descubre Guanahaní, explora Cuba y Haití'],
+['desc',1493,'','Segundo viaje de Colón','Establecidos en Haití (La Española)',1,'espanola'],
+['desc',1494,'','Tratado de Tordesillas','Portugal confirma sus derechos frente a Castilla',1,'tordesillas'],
+['desc',1498,'','Tercer viaje de Colón','Trinidad y río Orinoco'],
+['desc',1502,'','Cuarto viaje de Colón','Exploran América Central'],
+['desc',1503,'','Casa de Contratación (Sevilla)','Ordenanzas de Alcalá de Henares: las Indias, unidas a Castilla'],
+['desc',1506,'','Muere Colón','Convencido de haber llegado a Asia'],
+['desc',1509,'','La Casa de Contratación empieza sus registros','Entrada y salida de artículos de América',0],
+['desc',1519,'1519–1521','Cortés conquista el Imperio azteca'],
+['desc',1519,'1519–1522','Primera vuelta al mundo','Magallanes y Elcano'],
+['desc',1524,'','Consejo de Indias','Controla a la Casa de Contratación'],
+['desc',1527,'1527–1533','Pizarro conquista el Imperio inca'],
+['desc',1535,'','Virreinato de Nueva España (México)'],
+['desc',1542,'','Virreinato del Perú (Lima)'],
+
+['imp',1500,'','Nace Carlos en Gante','Hijo de Juana la Loca y Felipe el Hermoso'],
+['imp',1516,'1516–1556','Carlos I de España y V de Alemania','Casa de Austria (Habsburgo)'],
+['imp',1517,'','Carlos pisa la Península','Instaura la dinastía Habsburgo'],
+['imp',1517,'','Lutero inicia la Reforma','Contra la Iglesia'],
+['imp',1520,'','Carlos, emperador del Sacro Imperio','Según tus apuntes; ver «Dudas»',0,'emperador'],
+['imp',1521,'','Dieta de Worms','Carlos se opone a Lutero'],
+['imp',1525,'','Batalla de Pavía','Francisco I de Francia, capturado; disputa por Milán'],
+['imp',1526,'','Tratado de Madrid','Pone fin a la guerra con Francia'],
+['imp',1527,'','Saqueo de Roma','Tropas imperiales; Clemente VII se alía con Francia (Liga Clementina)'],
+['imp',1530,'','Carlos, proclamado emperador en Bolonia','Por el papa Clemente VII'],
+['imp',1535,'','Conquista de Túnez','Contra Solimán y Barbarroja'],
+['imp',1541,'','Desastre de Argel','Frente a los otomanos'],
+['imp',1547,'','Batalla de Mühlberg','Derrota de los protestantes alemanes'],
+['imp',1555,'','Paz de Augsburgo','Cada príncipe, su religión; Carlos abdica en Fernando',1,'abdica'],
+['imp',1556,'1556–1598','Felipe II','Carlos le cede el resto de territorios; se consolida la hegemonía',1,'abdica'],
+['imp',1557,'','Batalla de San Quintín','Felipe II vence a Francia (Enrique II) y hace construir El Escorial'],
+['imp',1559,'','Paz de Cateau-Cambrésis','Francia renuncia a Italia'],
+['imp',1566,'','Rebelión protestante en Flandes','Felipe II envía al duque de Alba; Tribunal de los Tumultos'],
+['imp',1571,'','Batalla de Lepanto','La Santa Liga de Don Juan de Austria vence a los otomanos'],
+['imp',1573,'','Se disuelve la Santa Liga','',0],
+['imp',1580,'','Felipe II incorpora Portugal','Tras morir Sebastián I'],
+['imp',1581,'','Cortes de Tomar','Confirman las condiciones del reinado en Portugal'],
+['imp',1588,'','Armada Invencible','Sale de Lisboa contra Isabel I; la destruyen los temporales'],
+
+['oliv',1621,'1621–1665','Felipe IV y su valido, Olivares','El valido gobierna por el rey'],
+['oliv',1624,'','Memorial secreto','Unificación jurídica e institucional de la monarquía'],
+['oliv',1626,'','Unión de Armas','Ejército permanente de 140.000 hombres de todos los reinos'],
+['oliv',1640,'','Corpus de Sangre (Barcelona)','Rebelión catalana; Portugal se independiza (Juan IV)'],
+['oliv',1652,'','Termina la revuelta catalana'],
+
+['crisis',1598,'1598–1621','Felipe III','Primer Austria menor'],
+['crisis',1608,'','Consejo de Indias: 2/3 de las mercancías salen fuera','Comercio con América en manos extranjeras',0],
+['crisis',1609,'','Expulsión de los moriscos','Agrava la crisis demográfica'],
+['crisis',1665,'1665–1700','Carlos II','Último Austria menor'],
+['crisis',1680,'','Devaluación de la moneda de vellón','Recuperación a finales de siglo']
+];
+/* ===== DATOS 2: esquemas por bloque (t = cabecera visible, d = lo que debes recordar, m = truco) ===== */
+const ESQ={
+roma:{gancho:'Cuatro C y una M',ramas:[
+ {t:'Contexto: II Guerra Púnica (218-202 a.C.)',d:['Roma contra Cartago','Detonante: Aníbal toma Sagunto (219 a.C.)','218 a.C.: desembarcan los hermanos Escipiones','Roma vence; la romanización es paulatina: no todos los pueblos se adaptaron igual de rápido']},
+ {t:'Cómo se romaniza',m:'Comercio · Ciudadanía · Ciudades · Colonias · Matrimonios',d:['Comercio y contacto militar con los romanos que se quedaron','Ciudadanía romana, con sus derechos y privilegios','Ciudades nuevas y ya existentes, con órganos de gobierno romanos','Colonias: tierras para soldados retirados','Matrimonios mixtos y nuevos caminos']},
+ {t:'Legado cultural',m:'Arte · Caminos · Minas · Lengua · Letras',d:['Edificios y monumentos: Acueducto de Segovia','Calzadas: Vía de la Plata (Mérida-Astorga)','Minas: Las Médulas (León)','Latín y derecho romano, base del derecho moderno','Literatura: Séneca y Marcial']}
+]},
+visi:{gancho:'Territorio · Religión · Ley',ramas:[
+ {t:'De Tolosa a Toledo',d:['409: suevos, vándalos y alanos cruzan los Pirineos','418: reino visigodo de Tolosa (Francia)','Código de Eurico: primera recopilación de leyes germanas','507: Vouillé; los francos vencen y los visigodos pasan a Hispania, con capital en Toledo']},
+ {t:'Las tres unidades',m:'Leovigildo = territorio · Recaredo = religión · Recesvinto = ley',d:['Territorial: Leovigildo','Religiosa: Recaredo, conversión al catolicismo y III Concilio de Toledo (589)','Jurídica: Recesvinto y el Liber Iudiciorum (654)']},
+ {t:'Una monarquía electiva',d:['El rey tiene poderes militares, judiciales, legislativos y ejecutivos, limitados por la nobleza y la Iglesia','Aula Regia: asamblea heredera del senado romano','Officium Palatinum: magnates de confianza que ayudan al rey','Concilios de Toledo: asambleas eclesiásticas convocadas por el rey']},
+ {t:'Fidelidades',d:['Gardingos: guerreros fieles; reciben tierras en usufructo vitalicio','Bucelarios: hombres fieles de los anteriores; protección y tierras a cambio de obediencia']},
+ {t:'El cristianismo en el Imperio romano',d:['Edicto de Milán (313)','Edicto de Tesalónica (380, Teodosio)']}
+]},
+and:{gancho:'Conquista · Valiato · Emirato · Califato · Taifas',ramas:[
+ {t:'Conquista (711-714)',d:['Crisis visigoda y guerra por el trono','Don Rodrigo muere en Guadalete (Cádiz), 711','Ocupación pactada']},
+ {t:'Valiato o emirato dependiente (714-756)',d:['21 gobernadores','Árabes contra bereberes; sublevación bereber en 741','Covadonga (722) y Poitiers (732)']},
+ {t:'Emirato independiente (756-929)',d:['750: matanza de los Omeya','756: Abderramán I pacifica Al-Andalus y crea la mezquita de Córdoba','778: Roncesvalles','Al-Hakam I: Jornada del Foso (Toledo, 797) y Revuelta de los Arrabales (Córdoba, 818)','Muhammad I: se subleva Omar ben Hafsún (muladí)']},
+ {t:'Califato (929-1031)',d:['Abderramán III (929-961): Medina Azahara','Al-Hakam II «el Sabio»: biblioteca de 400.000 volúmenes','Almanzor: hachib; gobierna por Hisham II, que era un niño; unas 50 campañas contra los cristianos; muere herido tras Calatañazor (1002)']},
+ {t:'Taifas y fin de Al-Andalus (1031-1492)',d:['1031: Fitna y primeros Taifas','1085: Alfonso VI toma Toledo. 1086: Sagrajas; llegan los almorávides (1086-1144)','Segundos Taifas; almohades (1147-1212): Alarcos 1195 y Navas de Tolosa 1212 (Alfonso VIII)','Terceros Taifas y reino nazarí de Granada, hasta 1492; benimerines (Salado, 1340)']},
+ {t:'Cargos y vocabulario',d:['Califa (príncipe) y emir','Visir (ministro) y valí (gobernador de provincia)','Cadí (juez) y hachib (primer ministro)','Coras: divisiones del territorio','Corán y Sunna']}
+]},
+cortes:{gancho:'Consilium + auxilium',ramas:[
+ {t:'Qué son y de dónde vienen',d:['Reunión de nobleza, clero y tercer estado (oligarquía urbana)','Antecedentes: Senado romano, Aula Regia y Curia Regia']},
+ {t:'Las primeras: 1188',d:['León, reinado de Alfonso IX','Asisten representantes de las ciudades']},
+ {t:'Castilla frente a Aragón',d:['Castilla: Cortes únicas desde la unión con León (Fernando III, 1230); 3 brazos, uno por estamento','Aragón: 4 brazos, porque los ricos hombres van aparte de infanzones y caballeros','Aragón, Cataluña y Valencia: Cortes propias e independientes; a veces se juntaban en Generales']},
+ {t:'Funciones',d:['Consilium: asesorar al monarca','Auxilium: votar servicios, subsidios e impuestos extraordinarios']},
+ {t:'Diferencias con las Cortes actuales',d:['No representaban a la mayoría de la población','Sin poder legislativo ni herramientas legales para controlar al rey']}
+]},
+desc:{gancho:'Colón: 4 viajes y 1 tratado',ramas:[
+ {t:'Los descubrimientos del siglo XV',d:['Portugal: Bartolomé Díaz, Cabo de Buena Esperanza (1487)','Castilla: Colón (1492), Cortés y el Imperio azteca (1519-1521), Pizarro y el Imperio inca (1527-1533), Magallanes y Elcano (1519-1522)']},
+ {t:'Colón: ideas y pacto',d:['Genovés; la Tierra es redonda','Se llega a las islas de las especias navegando hacia el oeste','Capitulaciones de Santa Fe (1492) con los Reyes Católicos']},
+ {t:'Los cuatro viajes',m:'1492 · 1493 · 1498 · 1502',d:['1492: sale de Palos el 3 de agosto con Santa María, Pinta y Niña; Guanahaní, Cuba y Haití','1493: establecidos en Haití (La Española)','1498: Trinidad y río Orinoco','1502: América Central','Tordesillas (1494). Colón muere en 1506, convencido de haber llegado a Asia']},
+ {t:'Administración central',d:['Casa de Contratación, Sevilla (1503); registros desde 1509','Consejo de Indias (1524): controla a la Casa de Contratación','Ordenanzas de Alcalá de Henares (1503): las Indias, unidas a Castilla']},
+ {t:'Administración territorial',d:['Virreinato de Nueva España (1535, México)','Virreinato del Perú (1542, Lima)','Gobernaciones o capitanías']}
+]},
+imp:{gancho:'Carlos V: 4 frentes · Felipe II: 5',ramas:[
+ {t:'Carlos I de España y V de Alemania',d:['Nace en Gante en 1500; hijo de Juana la Loca y Felipe el Hermoso','Pisa la Península en 1517 e instaura la dinastía Habsburgo','Hereda de los Reyes Católicos y de Maximiliano de Austria y María de Borgoña','Rey de 1516 a 1556; emperador en 1520','Abdica en su hermano Fernando (1555) y en su hijo Felipe II (1556)']},
+ {t:'Los cuatro frentes de Carlos V',m:'Francia · Papa · Otomanos · Protestantes',d:['Francia: Pavía (1525), Francisco I capturado; Tratado de Madrid (1526)','Papado: saqueo de Roma (1527), Liga Clementina; coronación en Bolonia (1530)','Otomanos: Solimán y Barbarroja; Túnez (1535) y Desastre de Argel (1541)','Protestantes: Worms (1521), Mühlberg (1547) y Paz de Augsburgo (1555)']},
+ {t:'Los cinco frentes de Felipe II',m:'Francia · Otomanos · Portugal · Flandes · Inglaterra',d:['Francia: San Quintín (1557) y El Escorial; Paz de Cateau-Cambrésis (1559)','Otomanos: Santa Liga y Lepanto (1571), con Don Juan de Austria','Portugal: incorporado en 1580; Cortes de Tomar (1581)','Flandes: rebelión de 1566, duque de Alba y Tribunal de los Tumultos','Inglaterra: Armada Invencible (1588), destruida por los temporales']}
+],tabla:true},
+oliv:{gancho:'Tres proyectos fallidos y la crisis de 1640',ramas:[
+ {t:'Qué es un valido',d:['El rey confía en un hombre para que gobierne por él','Es propio de los Austrias menores','Las juntas sustituyen a los consejos y deciden con más facilidad']},
+ {t:'Olivares y sus tres proyectos',m:'Banco · Unificación · Ejército',d:['Gaspar de Guzmán y Pimentel, valido de Felipe IV (1621-1665)','Objetivo: recuperar la reputación y reformar el gobierno; fracasó','1) Banco estatal y red nacional de erarios: evitar deudas con extranjeros; los privilegiados se opusieron','2) Unificación jurídica e institucional: Memorial secreto (1624)','3) Unión de Armas (1626): ejército de 140.000 hombres de todos los territorios']},
+ {t:'Consecuencias: la crisis de 1640',d:['Rebelión en Cataluña: Corpus de Sangre (Barcelona, 1640), hasta 1652','Portugal se independiza en 1640 con Juan IV']}
+]},
+crisis:{gancho:'Demografía · Economía · Sociedad',ramas:[
+ {t:'Marco general',d:['Austrias menores: Felipe III (1598-1621), Felipe IV (1621-1665) y Carlos II (1665-1700)','Siglo de Oro cultural, pero crisis política, económica, social y demográfica']},
+ {t:'Crisis demográfica',d:['Epidemias en oleadas','Expulsión de los moriscos (1609)','Guerras y dificultades económicas','Hambre y emigración a América']},
+ {t:'Depresión económica',d:['Cae la producción agrícola','Baja la ganadería ovina','Decae la industria textil','Comercio con América en manos extranjeras: 2/3 del valor, fuera (Consejo de Indias, 1608)']},
+ {t:'Consecuencias',d:['Recuperación a finales de siglo; devaluación del vellón (1680)','Sociedad: nobleza, burguesía, clero (200.000 miembros) y campesinos']}
+]}
+};
+
+/* Tabla comparativa de frentes (bloque «imp») */
+const TABLA_FRENTES={cols:['Frente','Carlos V','Felipe II'],rows:[
+['Francia','Pavía 1525 · Madrid 1526','San Quintín 1557 · Cateau-Cambrésis 1559'],
+['Otomanos','Túnez 1535 · Argel 1541','Lepanto 1571'],
+['Papado','Saqueo de Roma 1527 · Bolonia 1530','—'],
+['Protestantes','Worms 1521 · Mühlberg 1547 · Augsburgo 1555','—'],
+['Portugal','—','1580 · Cortes de Tomar 1581'],
+['Flandes','—','1566 · Alba · Tribunal de los Tumultos'],
+['Inglaterra','—','Armada Invencible 1588']
+]};
+/* ===== DATOS 3: tarjetas [bloque, pregunta, respuesta, duda] ===== */
+const FICHAS=[
+['roma','¿Qué detonó la II Guerra Púnica?','La toma de Sagunto por Aníbal (219 a.C.).'],
+['roma','¿Cuándo fue la II Guerra Púnica y quién se enfrentó?','218-202 a.C.: romanos contra cartagineses. Ganó Roma.'],
+['roma','¿Quiénes desembarcaron en 218 a.C.?','Los hermanos Escipiones.'],
+['roma','¿Cuáles son las cinco vías de la romanización?','Comercio y contacto militar · Ciudadanía · Ciudades · Colonias · Matrimonios mixtos y caminos (4 C + 1 M).'],
+['roma','¿Qué calzada une Mérida con Astorga?','La Vía de la Plata.'],
+['roma','¿Qué es Las Médulas?','Una explotación minera romana, en León.'],
+['roma','¿Qué autores hispanos destacan en la literatura romana?','Séneca y Marcial.'],
+['roma','¿Qué monumento de Segovia ilustra la herencia romana?','El Acueducto.'],
+
+['visi','¿Cuándo llegan suevos, vándalos y alanos a la Península?','Hacia 409, por los Pirineos.'],
+['visi','¿Dónde y cuándo se forma el primer reino visigodo?','En Tolosa (Francia), en 418.'],
+['visi','¿Qué es el Código de Eurico?','La primera recopilación de leyes del pueblo germano.'],
+['visi','¿Qué ocurre en Vouillé (507)?','Los francos vencen a los visigodos, que pasan a Hispania con capital en Toledo.'],
+['visi','¿Quién unificó el reino territorial, religiosa y jurídicamente?','Territorial: Leovigildo. Religiosa: Recaredo (589). Jurídica: Recesvinto (654).'],
+['visi','¿Qué fue el III Concilio de Toledo?','En 589, Recaredo se convierte al catolicismo y unifica religiosamente el reino.'],
+['visi','¿Qué es el Liber Iudiciorum?','El código jurídico unificador de Recesvinto (654).'],
+['visi','¿Cómo se llegaba a rey en la monarquía visigoda?','Era una monarquía electiva.'],
+['visi','¿Qué son el Aula Regia y el Officium Palatinum?','Aula Regia: asamblea heredera del senado romano. Officium Palatinum: magnates de confianza que ayudan al rey.'],
+['visi','¿Quiénes eran los gardingos y los bucelarios?','Gardingos: guerreros fieles al rey, con tierras en usufructo vitalicio. Bucelarios: fieles de los anteriores; protección y tierras a cambio de obediencia.'],
+['visi','¿Qué fueron los edictos de Milán (313) y Tesalónica (380)?','Dos hitos del cristianismo en el Imperio romano; el de Tesalónica es de Teodosio.','edictos'],
+
+['and','¿Dónde y cuándo muere don Rodrigo?','En Guadalete (Cádiz), 711.'],
+['and','¿Cuántos gobernadores hubo en el valiato (714-756)?','21.'],
+['and','¿Qué dos batallas marcan la política exterior del valiato?','Covadonga (722) y Poitiers (732).'],
+['and','¿Cuándo se sublevaron los bereberes?','En 741.'],
+['and','¿Qué pasa en 750 y en 756?','750: matanza de los Omeya. 756: Abderramán I pacifica Al-Andalus y crea la mezquita de Córdoba.'],
+['and','¿Qué batalla ocurre en 778 bajo Abderramán I?','Roncesvalles.'],
+['and','¿Qué son la Jornada del Foso y la Revuelta de los Arrabales?','Bajo Al-Hakam I: Foso, en Toledo (797); Arrabales, en Córdoba (818).'],
+['and','¿Quién se subleva con Muhammad I?','Omar ben Hafsún, un muladí.'],
+['and','¿Qué hace Abderramán III (929-961)?','Inicia el Califato y manda construir Medina Azahara.'],
+['and','¿Quién fue Al-Hakam II?','«El Sabio»: reunió una biblioteca de 400.000 volúmenes.'],
+['and','¿Quién fue Almanzor?','Hachib (primer ministro) que gobernó por Hisham II, un niño. Hizo unas 50 campañas contra los cristianos y murió herido tras Calatañazor (1002).'],
+['and','¿Qué es la Fitna (1031)?','El caos político que desintegra el Califato y da paso a los primeros Taifas.'],
+['and','¿Qué ocurre en 1085 y en 1086?','1085: Alfonso VI conquista la Taifa de Toledo. 1086: es derrotado en Sagrajas y llegan los almorávides.'],
+['and','¿Quiénes son los almohades y qué batallas se asocian a ellos?','Dominan 1147-1212. Alarcos (1195) y Navas de Tolosa (1212, Alfonso VIII).'],
+['and','¿Qué fue el reino nazarí?','El último reino musulmán, con capital en Granada, hasta 1492.','nazari'],
+['and','¿Qué es un valí, un cadí y un hachib?','Valí: gobernador de provincia. Cadí: juez. Hachib: primer ministro.'],
+['and','¿Qué son las coras?','Las divisiones del territorio de Al-Andalus.'],
+
+['cortes','¿Dónde y cuándo nacen las primeras Cortes?','En León, en 1188, con Alfonso IX.'],
+['cortes','¿Quiénes componían las Cortes?','Nobleza, clero y tercer estado (oligarquía urbana).'],
+['cortes','¿Cuáles son los antecedentes de las Cortes?','El Senado romano, el Aula Regia y la Curia Regia.'],
+['cortes','¿Cuántos brazos tenían las Cortes de Castilla y las de Aragón?','Castilla: 3. Aragón: 4.'],
+['cortes','¿Por qué Aragón tenía cuatro brazos?','Los ricos hombres formaban un brazo distinto al de infanzones y caballeros.'],
+['cortes','¿Qué funciones tenían las Cortes?','Consilium (asesorar al rey) y auxilium (votar subsidios e impuestos extraordinarios).'],
+['cortes','¿Desde cuándo hay Cortes únicas en Castilla y León?','Desde 1230, con Fernando III el Santo.'],
+['cortes','¿En qué se diferencian de las Cortes modernas?','No representaban a la mayoría, no tenían poder legislativo ni controlaban al rey.'],
+
+['desc','¿Quién llegó al Cabo de Buena Esperanza y cuándo?','Bartolomé Díaz, en 1487 (Portugal).'],
+['desc','¿Qué grandes hitos castellanos hay entre 1492 y 1522?','Colón (1492) · Cortés y los aztecas (1519-1521) · Pizarro y los incas (1527-1533) · Magallanes y Elcano (1519-1522).'],
+['desc','¿Qué dos ideas tenía Colón?','Que la Tierra era redonda y que se llegaba a las islas de las especias navegando hacia el oeste.'],
+['desc','¿Qué fueron las Capitulaciones de Santa Fe?','Acuerdo de 1492 entre Colón y los Reyes Católicos sobre privilegios y beneficios.'],
+['desc','¿Cómo fue la salida del primer viaje?','3 de agosto de 1492, desde Palos (Huelva): nao Santa María y carabelas Pinta y Niña.'],
+['desc','¿Qué descubre Colón en su primer viaje?','Guanahaní (San Salvador); explora Cuba y Haití.'],
+['desc','¿Qué ocurre en el 2º, 3º y 4º viaje?','1493: Haití (La Española). 1498: Trinidad y río Orinoco. 1502: América Central.','espanola'],
+['desc','¿Qué fue el Tratado de Tordesillas (1494)?','El acuerdo entre portugueses y castellanos sobre sus derechos.','tordesillas'],
+['desc','¿Cuándo muere Colón y qué creía?','En 1506, convencido de haber llegado a Asia.'],
+['desc','¿Qué es la Casa de Contratación?','Se crea en Sevilla (1503); desde 1509 registra entradas y salidas de artículos de América.'],
+['desc','¿Qué es el Consejo de Indias?','Creado en 1524; controla a la Casa de Contratación.'],
+['desc','¿Cuáles eran los virreinatos?','Nueva España (1535, México) y Perú (1542, Lima).'],
+
+['imp','¿Quién fue Carlos I de España y V de Alemania?','Nacido en Gante (1500), hijo de Juana la Loca y Felipe el Hermoso. Rey 1516-1556.'],
+['imp','¿Cuándo llega Carlos a la Península?','En 1517; instaura la dinastía Habsburgo (Casa de Austria).'],
+['imp','¿Cuáles son los cuatro frentes de Carlos V?','Francia, Papado, Imperio otomano y protestantes alemanes.'],
+['imp','¿Qué ocurre en Pavía (1525)?','Francisco I de Francia es capturado. Después, el Tratado de Madrid (1526).'],
+['imp','¿Qué es el saqueo de Roma (1527)?','Las tropas imperiales saquean Roma; el papa Clemente VII se alía con Francia (Liga Clementina).'],
+['imp','¿Qué pasa en Bolonia en 1530?','Clemente VII proclama emperador a Carlos.'],
+['imp','¿Qué son Túnez (1535) y Argel (1541)?','Conquista de Túnez y Desastre de Argel, contra Solimán y Barbarroja.'],
+['imp','¿Qué son Worms, Mühlberg y Augsburgo?','Worms (1521): Carlos se opone a Lutero. Mühlberg (1547): derrota protestante. Augsburgo (1555): cada príncipe, su religión.'],
+['imp','¿Cómo reparte Carlos su herencia?','Abdica en su hermano Fernando (1555) y en su hijo Felipe II (1556).','abdica'],
+['imp','¿Cuáles son los cinco frentes de Felipe II?','Francia, Otomanos, Portugal, Flandes e Inglaterra.'],
+['imp','¿Qué ocurre en San Quintín (1557)?','Felipe II vence a Enrique II de Francia y hace construir El Escorial.'],
+['imp','¿Qué firma la Paz de Cateau-Cambrésis (1559)?','Francia renuncia a su dominio en Italia.'],
+['imp','¿Qué es Lepanto (1571)?','La flota de la Santa Liga, dirigida por Don Juan de Austria, vence a los otomanos. La liga se disuelve en 1573.'],
+['imp','¿Cómo se incorpora Portugal?','Tras morir Sebastián I, Felipe II reclama el trono (1580). Las Cortes de Tomar (1581) confirman las condiciones.'],
+['imp','¿Qué pasa en Flandes en 1566?','Los protestantes se sublevan; Felipe II envía al duque de Alba y crea el Tribunal de los Tumultos.'],
+['imp','¿Qué fue la Armada Invencible?','Flota enviada contra Isabel I de Inglaterra, que sale de Lisboa en 1588 y destruyen los temporales.'],
+
+['oliv','¿Qué es un valido?','El hombre de confianza en quien el rey delega el gobierno (Austrias menores).'],
+['oliv','¿Qué sustituyen las juntas?','A los consejos: las decisiones se toman con más facilidad.'],
+['oliv','¿Quién fue el valido de Felipe IV?','El conde duque de Olivares (Gaspar de Guzmán y Pimentel).'],
+['oliv','¿Qué proponía el primer proyecto de Olivares?','Un banco estatal (red nacional de erarios) para no endeudarse con extranjeros. Fracasó por los privilegiados.'],
+['oliv','¿Qué proponía el Memorial secreto (1624)?','Unificar jurídica e institucionalmente la monarquía: Felipe IV, rey de la monarquía hispánica y no de la suma de sus territorios.'],
+['oliv','¿Qué fue la Unión de Armas (1626)?','Un ejército permanente de 140.000 hombres de todos los territorios, con costes repartidos.'],
+['oliv','¿Qué pasa en 1640?','Rebelión de Cataluña (Corpus de Sangre) y la independencia de Portugal, con Juan IV.'],
+['oliv','¿Cuándo termina la revuelta catalana?','En 1652.'],
+
+['crisis','¿Quiénes son los Austrias menores?','Felipe III (1598-1621), Felipe IV (1621-1665) y Carlos II (1665-1700).'],
+['crisis','¿Qué causas tiene la crisis demográfica?','Epidemias, expulsión de los moriscos (1609), guerras y dificultades económicas.','peste'],
+['crisis','¿Cuándo se expulsó a los moriscos?','En 1609.'],
+['crisis','¿Qué sectores se hunden en la depresión económica?','Agricultura, ganadería ovina, industria textil y comercio con América.'],
+['crisis','¿Qué dice el Consejo de Indias en 1608?','Dos terceras partes del valor de las mercancías salían fuera de nuestros territorios.'],
+['crisis','¿Qué pasa con la moneda de vellón en 1680?','Se devalúa.'],
+['crisis','¿Qué grupos sociales destacan en el siglo XVII?','Nobleza, burguesía, clero (200.000 miembros) y campesinos.']
+];
+/* ===== DATOS 4: preguntas tipo test [bloque, pregunta, correcta, [3 falsas]] ===== */
+const TEST=[
+['roma','¿Qué hecho provocó la II Guerra Púnica?','La toma de Sagunto por Aníbal',['El desembarco de los Escipiones','La batalla de Pavía','La caída de Cartago']],
+['roma','¿Qué ciudades une la Vía de la Plata?','Mérida y Astorga',['Sevilla y Zaragoza','Toledo y Córdoba','Tarragona y Cádiz']],
+['roma','¿En qué provincia están Las Médulas?','León',['Segovia','Badajoz','Huelva']],
+['visi','¿Quién unificó religiosamente la monarquía visigoda?','Recaredo',['Leovigildo','Recesvinto','Eurico']],
+['visi','¿Quién promulgó el Liber Iudiciorum?','Recesvinto',['Leovigildo','Recaredo','Alarico II']],
+['visi','¿Qué batalla desplazó a los visigodos hacia la Península?','Vouillé',['Guadalete','Poitiers','Sagrajas']],
+['visi','¿Con qué recompensaban los reyes a los gardingos?','Tierras en usufructo vitalicio',['Ciudadanía romana','Un tercio del botín','Cargos en el Senado']],
+['visi','¿Cómo se accedía al trono visigodo?','Era una monarquía electiva',['Era hereditaria','Lo designaba el Papa','Lo decidía el Senado']],
+['and','¿Dónde murió don Rodrigo en 711?','Guadalete',['Covadonga','Poitiers','Calatañazor']],
+['and','¿Quién creó la mezquita de Córdoba?','Abderramán I',['Abderramán III','Al-Hakam II','Almanzor']],
+['and','¿Quién mandó construir Medina Azahara?','Abderramán III',['Abderramán I','Al-Hakam I','Almanzor']],
+['and','¿Qué califa reunió una biblioteca de 400.000 volúmenes?','Al-Hakam II',['Abderramán III','Hisham II','Muhammad I']],
+['and','¿Tras qué batalla murió herido Almanzor?','Calatañazor',['Sagrajas','Alarcos','Roncesvalles']],
+['and','¿Qué rey fue derrotado en Sagrajas (1086)?','Alfonso VI',['Alfonso VIII','Alfonso IX','Fernando III']],
+['and','¿Qué rey venció a los almohades en las Navas de Tolosa?','Alfonso VIII',['Alfonso VI','Alfonso IX','Fernando III']],
+['and','En el mundo musulmán, ¿qué era un cadí?','Un juez',['Un gobernador de provincia','El primer ministro','Un príncipe']],
+['and','En el Califato, ¿qué era el hachib?','El primer ministro',['El juez','El gobernador','El califa']],
+['cortes','¿Quién convocó las primeras Cortes, en 1188?','Alfonso IX de León',['Fernando III','Alfonso VI','Alfonso VIII']],
+['cortes','¿Cuántos brazos tenían las Cortes de Aragón?','Cuatro',['Dos','Tres','Cinco']],
+['cortes','¿Qué significa «auxilium» en las Cortes?','Ayuda económica al rey',['Consejo al rey','Poder legislativo','Control del monarca']],
+['desc','¿Quién llegó al Cabo de Buena Esperanza en 1487?','Bartolomé Díaz',['Cristóbal Colón','Magallanes','Pizarro']],
+['desc','¿Desde qué puerto salió Colón en 1492?','Palos (Huelva)',['Cádiz','Sevilla','Lisboa']],
+['desc','¿Cuál era la nao de la expedición de Colón?','Santa María',['Pinta','Niña','Victoria']],
+['desc','¿En qué viaje llegó Colón a Trinidad y al Orinoco?','En el tercero (1498)',['En el primero (1492)','En el segundo (1493)','En el cuarto (1502)']],
+['desc','¿Qué organismo controlaba a la Casa de Contratación?','El Consejo de Indias',['Las Cortes de Castilla','El Virreinato de Nueva España','El Aula Regia']],
+['desc','¿Cuál era la capital del Virreinato del Perú?','Lima',['México','Sevilla','Cuzco']],
+['imp','¿Dónde fue capturado Francisco I de Francia?','Pavía',['Mühlberg','San Quintín','Lepanto']],
+['imp','¿Qué paz resolvió el conflicto religioso alemán?','La Paz de Augsburgo',['La Paz de Cateau-Cambrésis','El Tratado de Madrid','El Tratado de Tordesillas']],
+['imp','¿Qué batalla de 1547 derrotó a los protestantes alemanes?','Mühlberg',['Pavía','Worms','San Quintín']],
+['imp','¿Dónde proclamó emperador a Carlos V el papa Clemente VII?','Bolonia',['Roma','Aquisgrán','Worms']],
+['imp','¿Qué victoria de Felipe II llevó a construir El Escorial?','San Quintín',['Lepanto','Pavía','Mühlberg']],
+['imp','¿Quién dirigió la Santa Liga en Lepanto?','Don Juan de Austria',['El duque de Alba','Barbarroja','Carlos V']],
+['imp','¿Qué asamblea confirmó las condiciones de Felipe II en Portugal?','Las Cortes de Tomar',['Las Cortes de León','El Concilio de Toledo','La Casa de Contratación']],
+['imp','¿A quién envió Felipe II a Flandes en 1566?','Al duque de Alba',['A Don Juan de Austria','Al conde duque de Olivares','Al duque de Lerma']],
+['oliv','¿Qué proponía el Memorial secreto de 1624?','Unificar jurídica e institucionalmente la monarquía',['Crear un banco estatal','Formar un ejército de 140.000 hombres','Expulsar a los moriscos']],
+['oliv','¿De cuántos hombres sería el ejército de la Unión de Armas?','140.000',['40.000','100.000','200.000']],
+['oliv','¿Qué territorio se independizó en 1640?','Portugal',['Cataluña','Flandes','Navarra']],
+['crisis','¿En qué año se expulsó a los moriscos?','1609',['1492','1640','1680']],
+['crisis','¿Qué se devaluó en 1680?','La moneda de vellón',['El real de plata','El maravedí de oro','El ducado']],
+['crisis','¿Quién reinó de 1665 a 1700?','Carlos II',['Felipe II','Felipe III','Felipe IV']]
+];
+/* ===== DATOS 5: puntos de los apuntes que conviene comprobar ===== */
+/* g: 1 = probable error · 2 = matiz o redacción confusa */
+const DUDAS=[
+{id:'edictos',g:1,t:'Edicto de Milán y Edicto de Tesalónica',
+ ap:'Los dos aparecen como el momento en que el cristianismo se afirma como religión oficial del Imperio.',
+ mas:'Milán (313, Constantino) suele explicarse como tolerancia hacia el cristianismo. La religión oficial es Tesalónica (380, Teodosio).'},
+{id:'tordesillas',g:1,t:'Tordesillas y las islas de las Especias',
+ ap:'Tordesillas (1494) confirma los derechos portugueses sobre las islas de las Especias.',
+ mas:'Tordesillas repartió las áreas de navegación y conquista entre Castilla y Portugal con una línea al oeste de Cabo Verde. Las Molucas (islas de las Especias) se resolvieron después, en el Tratado de Zaragoza (1529).'},
+{id:'espanola',g:1,t:'Cuándo se bautiza La Española',
+ ap:'En el segundo viaje (1493), establecidos en Haití, Colón la nombra La Española.',
+ mas:'Colón la llamó La Española ya en el primer viaje (1492). En el segundo viaje fundó La Isabela.'},
+{id:'malta',g:1,t:'Malta y el asedio otomano',
+ ap:'Malta aparece como perteneciente a la Santa Sede.',
+ mas:'En el asedio otomano de 1565, Malta estaba en manos de la Orden de San Juan (los caballeros de Malta).'},
+{id:'nazari',g:2,t:'Fecha del reino nazarí',
+ ap:'Reino nazarí de Granada (1236-1492). Además, la frase mezcla 1232, el Salado (1340) y la conquista del reino.',
+ mas:'1236 es la conquista de Córdoba por Fernando III. El reino nazarí suele fecharse entre 1232 y 1238 y llega hasta 1492. Ordénalo así: Navas (1212), Córdoba (1236), reino nazarí, Salado (1340), Granada (1492).'},
+{id:'emperador',g:2,t:'Carlos emperador: 1519, 1520 y 1530',
+ ap:'Nombrado emperador en 1520; proclamado en Bolonia en 1530.',
+ mas:'Fue elegido emperador en 1519, coronado en Aquisgrán en 1520 y coronado por el papa en Bolonia en 1530. Si te piden una sola fecha, usa la de tu profesor.'},
+{id:'abdica',g:2,t:'Las abdicaciones de Carlos V',
+ ap:'En 1555 abdica el título imperial y los Estados de la Casa de Austria en Fernando I; en 1556, el resto en Felipe II.',
+ mas:'Lo más habitual: 1555, cede los Países Bajos a Felipe; 1556, cede los reinos hispánicos a Felipe, y el Imperio pasa a Fernando (reconocido en 1558).'},
+{id:'peste',g:2,t:'Las oleadas de epidemias del siglo XVII',
+ ap:'«Oleadas de norte a sur con el cambio de siglo, a mediados y a finales del siglo siguiente, en Levante y Andalucía».',
+ mas:'Probablemente se refiere al siglo XVII: peste hacia 1596-1602 (norte a sur), 1647-1652 (Levante y Andalucía) y 1676-1685. Comprueba las fechas en tu libro.'},
+{id:'augsburgo',g:2,t:'Paz de Augsburgo: «príncipe/monje»',
+ ap:'«Príncipe/monje alemán, cada uno su religión».',
+ mas:'La idea es que cada príncipe alemán impone su religión (luterana o católica) en sus territorios. No intervienen monjes.'}
+];
+/* ===== NÚCLEO: utilidades, datos derivados, guardado ===== */
+const $=(s,r)=>(r||document).querySelector(s);
+const $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
+function h(tag,attrs){
+  const e=document.createElement(tag);
+  if(attrs)for(const k in attrs){
+    const v=attrs[k];
+    if(v==null||v===false)continue;
+    if(k==='class')e.className=v;
+    else if(k==='text')e.textContent=v;
+    else if(k.slice(0,2)==='on')e.addEventListener(k.slice(2),v);
+    else e.setAttribute(k,v===true?'':String(v));
+  }
+  for(let i=2;i<arguments.length;i++){
+    const kids=[].concat(arguments[i]);
+    for(const c of kids){
+      if(c==null||c===false)continue;
+      e.append(c&&c.nodeType?c:document.createTextNode(String(c)));
+    }
+  }
+  return e;
+}
+const B={};BLOQUES.forEach(b=>{B[b.id]=b});
+const colVar=id=>'--c:var(--c-'+id+')';
+const yl=y=>y<0?(-y)+' a.C.':String(y);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t}return a}
+function hashStr(s){let x=5381;for(let i=0;i<s.length;i++)x=((x<<5)+x+s.charCodeAt(i))|0;return (x>>>0).toString(36)}
+
+/* datos derivados */
+const EV=EVENTOS.map((r,i)=>({i:i,b:r[0],y:r[1],l:r[2]||'',t:r[3],d:r[4]||'',q:(r[5]===0||r[2])?0:1,f:r[6]||''}))
+  .sort((a,b)=>a.y-b.y||a.i-b.i);
+const yearCount={};EV.forEach(e=>{yearCount[e.y]=(yearCount[e.y]||0)+1});
+const evLabel=e=>e.l||yl(e.y);
+const CARDS=FICHAS.map(r=>({id:hashStr(r[1]),b:r[0],q:r[1],a:r[2],f:r[3]||''}));
+
+/* estado y guardado (en este navegador y, si hay sesión, en tu cuenta) */
+const KEY='repaso-historia-esp-1';
+const S={cards:{},quiz:{n:0,ok:0,best:0},t:0,tab:'esquema'};
+const today=()=>{const d=new Date();return Math.floor((d.getTime()-d.getTimezoneOffset()*60000)/864e5)};
+function loadLocal(){
+  try{
+    const j=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(j&&typeof j==='object'){
+      S.cards=j.cards||{};
+      S.quiz=Object.assign({n:0,ok:0,best:0},j.quiz||{});
+      S.t=j.t||0;
+      if(j.tab)S.tab=j.tab;
+    }
+  }catch(e){}
+}
+function persist(touch){
+  if(touch)S.t=Date.now();
+  try{localStorage.setItem(KEY,JSON.stringify({cards:S.cards,quiz:S.quiz,t:S.t,tab:S.tab}))}catch(e){}
+  if(touch)queueRemote();
+}
+let remoteRef=null,remoteBusy=false,remoteDirty=false,remoteTimer=0;
+function queueRemote(){
+  if(!remoteRef)return;
+  clearTimeout(remoteTimer);
+  remoteTimer=setTimeout(flushRemote,1800);
+}
+async function flushRemote(){
+  if(!remoteRef)return;
+  if(remoteBusy){remoteDirty=true;return}
+  remoteBusy=true;
+  try{await remoteRef.set({cards:S.cards,quiz:S.quiz,t:S.t})}catch(e){}
+  remoteBusy=false;
+  if(remoteDirty){remoteDirty=false;queueRemote()}
+}
+async function initRemote(){
+  try{
+    const C=window.claude;
+    if(!C||typeof C.use!=='function')return;
+    const res=await Promise.all([C.use('db'),C.use('user')]);
+    const db=res[0],user=res[1];
+    if(!db||!user)return;
+    const uid=await user.id();
+    if(!uid)return;
+    const ref=db.doc('data/users/'+uid+'/estudio');
+    const snap=await ref.get();
+    remoteRef=ref;
+    const r=snap.exists?snap.data():null;
+    if(r&&r.t>S.t){
+      S.cards=r.cards||{};
+      S.quiz=Object.assign({n:0,ok:0,best:0},r.quiz||{});
+      S.t=r.t;
+      persist(false);
+      renderStats();
+      if(!fc.started)renderTarjetas();
+    }else if(S.t>0&&(!r||S.t>r.t)){queueRemote()}
+  }catch(e){}
+}
+
+/* tarjetas pendientes y estadísticas de cabecera */
+function isDue(c){const r=S.cards[c.id];return !r||r[1]<=today()}
+function dueList(bid){return CARDS.filter(c=>isDue(c)&&(!bid||c.b===bid))}
+function renderStats(){
+  const total=CARDS.length;
+  const dom=CARDS.filter(c=>{const r=S.cards[c.id];return r&&r[0]>=3}).length;
+  $('#meterTxt').textContent=dom+' de '+total;
+  $('#meterBar').style.width=Math.round(dom/total*100)+'%';
+  const due=dueList().length;
+  $('#nTarjetas').textContent=due>0?String(Math.min(due,99)):'';
+}
+
+/* pestañas */
+const TABS=['esquema','fechas','tarjetas','test','dudas'];
+function goTab(name){
+  if(TABS.indexOf(name)<0)name='esquema';
+  S.tab=name;
+  TABS.forEach(t=>{
+    const on=t===name;
+    $('#p-'+t).hidden=!on;
+    $('#t-'+t).setAttribute('aria-selected',String(on));
+  });
+  persist(false);
+  try{window.scrollTo(0,0)}catch(e){}
+}
+function goDuda(id){
+  goTab('dudas');
+  const el=document.getElementById('d-'+id);
+  if(!el)return;
+  el.classList.add('hl');
+  try{el.scrollIntoView({block:'center'})}catch(e){}
+  setTimeout(()=>el.classList.remove('hl'),2600);
+}
+/* ===== ESQUEMA ===== */
+function chev(){
+  const s=document.createElement('span');
+  s.innerHTML='<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+  return s.firstChild;
+}
+function tablaFrentes(){
+  const t=h('table',null,
+    h('caption',null,h('span',{class:'lab',text:'Frente por frente'})),
+    h('thead',null,h('tr',null,TABLA_FRENTES.cols.map(c=>h('th',{scope:'col',text:c})))),
+    h('tbody',null,TABLA_FRENTES.rows.map(r=>h('tr',null,r.map(c=>h('td',{text:c})))))
+  );
+  return h('div',{class:'tw',role:'region',tabindex:'0','aria-label':'Tabla comparativa de frentes de Carlos V y Felipe II'},t);
+}
+function setOpen(sel,v){$$(sel,$('#p-esquema')).forEach(d=>{d.open=v})}
+function renderEsquema(){
+  const p=$('#p-esquema');
+  p.textContent='';
+  p.append(
+    h('h2',{class:'h2',text:'El esqueleto de cada tema'}),
+    h('p',{class:'intro',text:'Antes de abrir cada rama, intenta decir en voz alta qué hay dentro. Después comprueba. Así se fija mucho más que releyendo.'}),
+    h('div',{class:'ctl'},
+      h('button',{class:'btn sm',type:'button',text:'Abrir bloques',onclick:()=>{setOpen('.bloque',true);setOpen('.rama',false)}}),
+      h('button',{class:'btn sm',type:'button',text:'Mostrar todo',onclick:()=>{setOpen('.bloque',true);setOpen('.rama',true)}}),
+      h('button',{class:'btn sm',type:'button',text:'Cerrar todo',onclick:()=>{setOpen('.rama',false);setOpen('.bloque',false)}})
+    )
+  );
+  const wrap=h('div',{class:'bloques'});
+  BLOQUES.forEach((b,bi)=>{
+    const e=ESQ[b.id];
+    const ramas=h('div',{class:'ramas'});
+    e.ramas.forEach(r=>{
+      ramas.append(h('details',{class:'rama'},
+        h('summary',null,
+          h('span',{class:'mk'}),
+          h('span',null,h('span',{class:'rt',text:r.t}),r.m?h('span',{class:'rm',text:r.m}):null)
+        ),
+        h('ul',null,r.d.map(x=>h('li',{text:x})))
+      ));
+    });
+    if(e.tabla)ramas.append(tablaFrentes());
+    wrap.append(h('details',{class:'bloque',style:colVar(b.id),open:bi===0?true:null},
+      h('summary',null,
+        h('div',{class:'bq-top'},
+          h('span',{class:'tag',text:b.tema}),
+          h('span',{class:'bq-right'},h('span',{class:'bq-span',text:yl(b.a)+' – '+yl(b.b)}),chev())
+        ),
+        h('div',{class:'bq-name',text:b.n}),
+        h('div',{class:'bq-hook',text:e.gancho})
+      ),
+      ramas
+    ));
+  });
+  p.append(wrap);
+}
+/* ===== FECHAS: frisa a escala + línea del tiempo con modo «tapar» ===== */
+const tl={mode:'todo',f:'',shown:new Set()};
+const DOM_A=-250,DOM_B=1720;
+const pct=y=>(y-DOM_A)/(DOM_B-DOM_A)*100;
+
+function frisa(){
+  const rows=h('div',{class:'fr-rows'});
+  [-200,1,500,1000,1500].forEach(y=>rows.append(h('i',{class:'fr-tick',style:'left:'+pct(y).toFixed(2)+'%'})));
+  BLOQUES.forEach(b=>{
+    const l=pct(b.a),w=pct(b.b)-l,mid=l+w/2;
+    const lab=h('span',{class:'fr-lab',text:b.c});
+    if(mid<50)lab.style.left='calc('+(l+w).toFixed(2)+'% + 8px)';
+    else lab.style.right='calc('+(100-l).toFixed(2)+'% + 8px)';
+    rows.append(h('button',{class:'fr-row',type:'button','data-f':b.id,'aria-pressed':'false','aria-label':b.n+', de '+yl(b.a)+' a '+yl(b.b),style:colVar(b.id),onclick:()=>setFilter(tl.f===b.id?'':b.id)},
+      h('span',{class:'fr-bar',style:'left:'+l.toFixed(2)+'%;width:'+w.toFixed(2)+'%'}),lab));
+  });
+  const axis=h('div',{class:'fr-axis'});
+  [[-200,'200 a.C.'],[1,'1'],[500,'500'],[1000,'1000'],[1500,'1500']].forEach(t=>axis.append(h('span',{style:'left:'+pct(t[0]).toFixed(2)+'%',text:t[1]})));
+  return h('div',{class:'frisa',id:'frisa'},rows,axis,h('div',{class:'fr-hint',text:'A escala, de 218 a.C. a 1700. Toca un bloque para filtrar.'}));
+}
+function modeBtn(m,label){
+  return h('button',{type:'button','data-mode':m,'aria-pressed':'false',text:label,onclick:()=>setMode(m)});
+}
+function chipBtn(id,label){
+  return h('button',{class:'chip',type:'button','data-f':id,'aria-pressed':'false',style:id?colVar(id):null,onclick:()=>setFilter(id)},
+    id?h('span',{class:'dot'}):null,label);
+}
+function syncFechas(){
+  $$('#p-fechas [data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===tl.mode)));
+  $$('#p-fechas .chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.f===tl.f)));
+  $$('#frisa .fr-row').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.f===tl.f)));
+  const fr=$('#frisa');
+  if(tl.f)fr.setAttribute('data-f',tl.f);else fr.removeAttribute('data-f');
+}
+function setMode(m){tl.mode=m;tl.shown.clear();syncFechas();drawList()}
+function setFilter(id){tl.f=id;syncFechas();drawList()}
+function reveal(i){tl.shown.add(i);drawList()}
+function evMeta(e){
+  const m=h('div',{class:'ev-m'},h('span',{class:'tag',text:B[e.b].c}));
+  if(e.f)m.append(h('button',{class:'flag',type:'button',text:'Revisa',onclick:()=>goDuda(e.f)}));
+  return m;
+}
+function drawList(){
+  const list=$('#tlList');
+  list.textContent='';
+  const items=EV.filter(e=>!tl.f||e.b===tl.f);
+  $('#tlCount').textContent=items.length+' de '+EV.length+' sucesos';
+  items.forEach(e=>{
+    const open=tl.shown.has(e.i);
+    const covY=tl.mode==='fechas'&&!open,covT=tl.mode==='sucesos'&&!open;
+    const yEl=covY?h('button',{class:'cov',type:'button',text:'¿año?',onclick:()=>reveal(e.i)}):evLabel(e);
+    const bEl=covT
+      ?h('button',{class:'cov',type:'button',text:'Toca para ver el suceso',onclick:()=>reveal(e.i)})
+      :[h('div',{class:'ev-t',text:e.t}),e.d?h('div',{class:'ev-d',text:e.d}):null,evMeta(e)];
+    list.append(h('div',{class:'ev',style:colVar(e.b)},
+      h('div',{class:'ev-y'},yEl),
+      h('div',{class:'ev-rail'},h('i')),
+      h('div',{class:'ev-body'},bEl)));
+  });
+  if(!items.length)list.append(h('div',{class:'empty',text:'No hay sucesos en este bloque.'}));
+}
+function renderFechas(){
+  const p=$('#p-fechas');
+  p.textContent='';
+  p.append(
+    h('h2',{class:'h2',text:'La línea del tiempo'}),
+    h('p',{class:'intro',text:'Para estudiar, tapa las fechas o los sucesos e intenta adivinarlos antes de destaparlos. Tocar otra vez el modo vuelve a taparlo todo.'}),
+    frisa(),
+    h('div',{class:'seg',role:'group','aria-label':'Modo de estudio'},modeBtn('todo','Ver todo'),modeBtn('sucesos','Tapar sucesos'),modeBtn('fechas','Tapar fechas')),
+    h('div',{class:'chips',role:'group','aria-label':'Filtrar por bloque'},chipBtn('','Todos'),BLOQUES.map(b=>chipBtn(b.id,b.c))),
+    h('div',{class:'cnt',id:'tlCount'}),
+    h('div',{class:'tl',id:'tlList'})
+  );
+  syncFechas();
+  drawList();
+}
+/* ===== TARJETAS: repaso espaciado (cajas 0-5; intervalos en días) ===== */
+const INTV=[0,1,3,7,14,30];
+const fc={bid:'',queue:[],i:0,flipped:false,started:false,practice:false,max:15,stats:{si:0,casi:0,no:0}};
+const fmtDays=n=>n===0?'hoy':n===1?'mañana':'en '+n+' días';
+function gradeResult(box,g){
+  if(g==='no')return{box:0,days:0};
+  if(g==='casi'){const b=Math.max(1,box);return{box:b,days:1}}
+  const nb=Math.min(5,box+1);
+  return{box:nb,days:INTV[nb]};
+}
+function fcChip(id,label){
+  return h('button',{class:'chip',type:'button','data-b':id,'aria-pressed':'false',style:id?colVar(id):null,onclick:()=>{fc.bid=id;startSession(false)}},
+    id?h('span',{class:'dot'}):null,label);
+}
+function renderFcSummary(){
+  const el=$('#fcSum');
+  if(!el)return;
+  const pool=CARDS.filter(c=>!fc.bid||c.b===fc.bid);
+  const due=dueList(fc.bid).length;
+  const fresh=pool.filter(c=>!S.cards[c.id]).length;
+  const dom=pool.filter(c=>{const r=S.cards[c.id];return r&&r[0]>=3}).length;
+  el.textContent='';
+  el.append(h('span',null,'Pendientes hoy ',h('b',{text:due})),h('span',null,'Nuevas ',h('b',{text:fresh})),h('span',null,'Dominadas ',h('b',{text:dom+' de '+pool.length})));
+  $$('#p-tarjetas .chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.b===fc.bid)));
+}
+function startSession(practice){
+  fc.practice=!!practice;fc.i=0;fc.flipped=false;fc.started=false;fc.stats={si:0,casi:0,no:0};
+  let list;
+  if(practice){
+    list=shuffle(CARDS.filter(c=>!fc.bid||c.b===fc.bid)).slice(0,10);
+  }else{
+    const due=dueList(fc.bid);
+    const seen=due.filter(c=>S.cards[c.id]).sort((a,b)=>S.cards[a.id][0]-S.cards[b.id][0]||S.cards[a.id][1]-S.cards[b.id][1]);
+    const fresh=shuffle(due.filter(c=>!S.cards[c.id]));
+    list=seen.concat(fresh).slice(0,fc.max);
+  }
+  fc.queue=list;
+  renderFcSummary();
+  drawFc();
+}
+function flip(){fc.flipped=true;fc.started=true;drawFc()}
+function grade(g){
+  const c=fc.queue[fc.i];
+  if(!c)return;
+  const r=S.cards[c.id];
+  const res=gradeResult(r?r[0]:0,g);
+  fc.stats[g]++;
+  fc.started=true;
+  if(!fc.practice){
+    S.cards[c.id]=[res.box,today()+res.days];
+    persist(true);
+    renderStats();
+  }
+  if(g==='no'&&!fc.practice)fc.queue.push(c);
+  fc.i++;fc.flipped=false;
+  renderFcSummary();
+  drawFc();
+}
+function gBtn(g,label,c,ok){
+  const r=S.cards[c.id];
+  const sub=fc.practice?'sin guardar':fmtDays(gradeResult(r?r[0]:0,g).days);
+  return h('button',{class:'g'+(ok?' ok':''),type:'button',onclick:()=>grade(g)},label,h('small',{text:sub}));
+}
+function cardEl(c){
+  const foot=fc.flipped
+    ?h('div',{class:'grades'},gBtn('no','No la sabía',c),gBtn('casi','Casi',c),gBtn('si','La sabía',c,true))
+    :[h('button',{class:'btn pri',type:'button',text:'Ver respuesta',onclick:flip}),h('div',{class:'fc-hint',text:'Primero responde en voz alta'})];
+  return h('div',{class:'fc',style:colVar(c.b)},
+    h('div',{class:'fc-top'},h('span',{class:'tag',text:B[c.b].c}),c.f?h('button',{class:'flag',type:'button',text:'Revisa',onclick:()=>goDuda(c.f)}):null),
+    h('div',{class:'fc-q',text:c.q}),
+    fc.flipped?[h('div',{class:'fc-rule'}),h('div',{class:'fc-a',text:c.a})]:null,
+    h('div',{class:'fc-foot'},foot));
+}
+function doneEl(){
+  const st=fc.stats,tom=CARDS.filter(c=>{const r=S.cards[c.id];return r&&r[1]===today()+1}).length;
+  const left=dueList(fc.bid).length;
+  const btns=h('div',{class:'row-btn'});
+  if(!fc.practice&&left>0)btns.append(h('button',{class:'btn pri',type:'button',text:'Otra tanda',onclick:()=>startSession(false)}));
+  btns.append(h('button',{class:'btn',type:'button',text:'Practicar 10 al azar',onclick:()=>startSession(true)}));
+  btns.append(h('button',{class:'btn',type:'button',text:'Repasar el esquema',onclick:()=>goTab('esquema')}));
+  return h('div',{class:'done'},
+    h('div',{class:'lab',text:fc.practice?'Práctica terminada':'Tanda terminada'}),
+    h('div',{class:'big',text:st.si+' sabidas, '+st.casi+' casi, '+st.no+' falladas'}),
+    h('p',{class:'intro',text:fc.practice?'Esta práctica no cambia tu calendario de repaso.':(left>0?'Te quedan '+left+' pendientes hoy.':'Hoy ya no te queda nada. Mañana te tocan '+tom+' tarjetas más las nuevas que quieras.')}),
+    btns);
+}
+function emptyFcEl(){
+  return h('div',{class:'done'},
+    h('div',{class:'big',text:'Hoy no tienes tarjetas pendientes'}),
+    h('p',{class:'intro',text:'Vuelve mañana para repasar las que ya has visto, o practica ahora sin que cuente.'}),
+    h('div',{class:'row-btn'},h('button',{class:'btn pri',type:'button',text:'Practicar 10 al azar',onclick:()=>startSession(true)})));
+}
+function drawFc(){
+  const area=$('#fcArea');
+  if(!area)return;
+  area.textContent='';
+  if(!fc.queue.length){area.append(emptyFcEl());return}
+  if(fc.i>=fc.queue.length){area.append(doneEl());return}
+  area.append(
+    h('div',{class:'sess'},h('span',{class:'cnt',text:(fc.i+1)+' de '+fc.queue.length}),h('div',{class:'bar'},h('i',{style:'width:'+Math.round(fc.i/fc.queue.length*100)+'%'}))),
+    cardEl(fc.queue[fc.i]));
+}
+function renderTarjetas(){
+  const p=$('#p-tarjetas');
+  p.textContent='';
+  p.append(
+    h('h2',{class:'h2',text:'Tarjetas con repaso espaciado'}),
+    h('p',{class:'intro',text:'Responde en voz alta antes de destapar. Las que fallas vuelven hoy; las que aciertas vuelven mañana, a los 3 días, a la semana y a las dos semanas.'}),
+    h('div',{class:'fc-sum',id:'fcSum'}),
+    h('div',{class:'chips',role:'group','aria-label':'Filtrar por bloque'},fcChip('','Todas'),BLOQUES.map(b=>fcChip(b.id,b.c))),
+    h('div',{id:'fcArea',class:'panel','aria-live':'polite'})
+  );
+  startSession(false);
+}
+/* ===== TEST: preguntas escritas + preguntas de fechas generadas desde la cronología ===== */
+const qz={bid:'',n:10,list:[],i:0,ok:0,miss:[],locked:false};
+const LET=['A','B','C','D'];
+function yearDistractors(e){
+  const seen={};seen[e.y]=1;
+  const ys=[];
+  EV.forEach(o=>{if(!seen[o.y]){seen[o.y]=1;ys.push(o.y)}});
+  ys.sort((a,b)=>Math.abs(a-e.y)-Math.abs(b-e.y));
+  return shuffle(ys.slice(0,6)).slice(0,3);
+}
+function qAsk(e){
+  const ds=yearDistractors(e);
+  return{k:'a',b:e.b,q:'¿En qué año ocurrió: '+e.t+'?',ok:yl(e.y),opts:shuffle([e.y].concat(ds)).map(yl),x:e.f?'':e.d};
+}
+function qWhat(e){
+  const same=EV.filter(o=>o.b===e.b&&o.y!==e.y&&o.t!==e.t);
+  const rest=EV.filter(o=>o.b!==e.b&&o.y!==e.y&&o.t!==e.t);
+  const ds=shuffle(same).slice(0,3);
+  if(ds.length<3)shuffle(rest).slice(0,3-ds.length).forEach(o=>ds.push(o));
+  return{k:'b',b:e.b,q:'¿Qué ocurrió en '+evLabel(e)+'?',ok:e.t,opts:shuffle([e].concat(ds)).map(o=>o.t),x:e.f?'':e.d};
+}
+function buildPool(bid){
+  const m=[],a=[];
+  TEST.forEach(r=>{
+    if(bid&&r[0]!==bid)return;
+    m.push({k:'m',b:r[0],q:r[1],ok:r[2],opts:shuffle([r[2]].concat(r[3])),x:''});
+  });
+  EV.forEach(e=>{
+    if(!e.q||(bid&&e.b!==bid))return;
+    a.push(qAsk(e));
+    if(yearCount[e.y]===1)a.push(qWhat(e));
+  });
+  return{m:shuffle(m),a:shuffle(a)};
+}
+function pickList(bid,n){
+  const p=buildPool(bid);
+  const nm=Math.min(p.m.length,Math.ceil(n/2));
+  const na=Math.min(p.a.length,n-nm);
+  let list=p.m.slice(0,nm).concat(p.a.slice(0,na));
+  if(list.length<n)list=list.concat(p.m.slice(nm).concat(p.a.slice(na)).slice(0,n-list.length));
+  return shuffle(list);
+}
+function qzChip(id,label){
+  return h('button',{class:'chip',type:'button','data-b':id,'aria-pressed':String(qz.bid===id),style:id?colVar(id):null,onclick:()=>{qz.bid=id;renderTest()}},
+    id?h('span',{class:'dot'}):null,label);
+}
+function renderTest(){
+  const p=$('#p-test');
+  p.textContent='';
+  const best=S.quiz.best>0?'Mejor resultado: '+S.quiz.best+' %. ':'';
+  p.append(
+    h('h2',{class:'h2',text:'Ponte a prueba'}),
+    h('p',{class:'intro',text:best+'Mezcla preguntas sobre personajes y conceptos con preguntas de fechas. Cada vez salen distintas.'}),
+    h('div',{class:'chips',role:'group','aria-label':'Elegir bloque'},qzChip('','Todos'),BLOQUES.map(b=>qzChip(b.id,b.c))),
+    h('div',{class:'seg',role:'group','aria-label':'Número de preguntas'},
+      [10,20].map(n=>h('button',{type:'button','aria-pressed':String(qz.n===n),text:n+' preguntas',onclick:()=>{qz.n=n;renderTest()}}))),
+    h('button',{class:'btn pri',type:'button',text:'Empezar',onclick:()=>startQuiz(pickList(qz.bid,qz.n))})
+  );
+}
+function startQuiz(list){
+  qz.list=list;qz.i=0;qz.ok=0;qz.miss=[];qz.locked=false;
+  drawQ(-1);
+}
+function answer(idx){
+  if(qz.locked)return;
+  qz.locked=true;
+  const q=qz.list[qz.i];
+  const right=q.opts[idx]===q.ok;
+  if(right)qz.ok++;else qz.miss.push(q);
+  S.quiz.n++;if(right)S.quiz.ok++;
+  drawQ(idx);
+}
+function nextQ(){
+  qz.i++;qz.locked=false;
+  if(qz.i>=qz.list.length)finishQuiz();else drawQ(-1);
+}
+function drawQ(sel){
+  const p=$('#p-test');
+  p.textContent='';
+  const q=qz.list[qz.i];
+  if(!q){renderTest();return}
+  const last=qz.i===qz.list.length-1;
+  const opts=h('div',{class:'opts'},q.opts.map((o,i)=>{
+    let cls='opt',mark=LET[i];
+    if(qz.locked){
+      if(o===q.ok){cls+=' right';mark='✓'}
+      else if(i===sel){cls+=' wrong';mark='✗'}
+    }
+    return h('button',{class:cls,type:'button',disabled:qz.locked?true:null,onclick:()=>answer(i)},h('span',{class:'k',text:mark}),h('span',{text:o}));
+  }));
+  const box=h('div',{class:'qbox',style:colVar(q.b)},
+    h('div',{class:'sess'},h('span',{class:'tag',text:B[q.b].c}),h('span',{class:'cnt',text:(qz.i+1)+' de '+qz.list.length}),h('div',{class:'bar'},h('i',{style:'width:'+Math.round(qz.i/qz.list.length*100)+'%'}))),
+    h('div',{class:'qt',text:q.q}),
+    opts);
+  if(qz.locked){
+    const right=q.opts[sel]===q.ok;
+    box.append(h('div',{class:'fb',role:'status',text:(right?'Correcto. ':'Era: '+q.ok+'. ')+(q.x||'')}));
+    box.append(h('button',{class:'btn pri',type:'button',text:last?'Ver resultado':'Siguiente',onclick:nextQ}));
+  }
+  p.append(box);
+}
+function finishQuiz(){
+  const total=qz.list.length,pc=Math.round(qz.ok/total*100);
+  if(pc>S.quiz.best)S.quiz.best=pc;
+  persist(true);
+  const p=$('#p-test');
+  p.textContent='';
+  const cnt={};qz.miss.forEach(q=>{cnt[q.b]=(cnt[q.b]||0)+1});
+  let worst='',wn=0;
+  Object.keys(cnt).forEach(b=>{if(cnt[b]>wn){wn=cnt[b];worst=b}});
+  const msg=qz.miss.length===0?'Sin fallos. Pasa a las tarjetas para que se quede a largo plazo.':'Donde más has fallado: '+B[worst].n+'. Vuelve a su esquema antes de repetir.';
+  const btns=h('div',{class:'row-btn'});
+  if(qz.miss.length)btns.append(h('button',{class:'btn pri',type:'button',text:'Repetir los fallos',onclick:()=>startQuiz(shuffle(qz.miss).map(q=>Object.assign({},q,{opts:shuffle(q.opts)})))}));
+  btns.append(h('button',{class:'btn'+(qz.miss.length?'':' pri'),type:'button',text:'Nuevo test',onclick:renderTest}));
+  btns.append(h('button',{class:'btn',type:'button',text:'Ir al esquema',onclick:()=>goTab('esquema')}));
+  p.append(
+    h('div',{class:'done'},
+      h('div',{class:'lab',text:'Resultado'}),
+      h('div',{class:'score',text:qz.ok+' / '+total}),
+      h('p',{class:'intro',text:pc+' %. '+msg}),
+      btns),
+    qz.miss.length?h('div',{class:'miss'},h('div',{class:'lab',text:'Para repasar'}),h('ul',{class:'miss'},qz.miss.map(q=>h('li',null,h('b',{text:q.q}),'Respuesta: '+q.ok)))):null
+  );
+}
+/* ===== DUDAS + ARRANQUE ===== */
+function renderDudas(){
+  const p=$('#p-dudas');
+  p.textContent='';
+  p.append(
+    h('h2',{class:'h2',text:'Puntos de tus apuntes que conviene comprobar'}),
+    h('p',{class:'intro',text:'Al pasar los apuntes a tarjetas he visto datos que no coinciden con lo habitual. No los he cambiado en las tarjetas: en el examen manda lo que diga tu profesor o tu libro.'}),
+    DUDAS.map(d=>h('article',{class:'dd',id:'d-'+d.id},
+      h('span',{class:'sev g'+d.g,text:d.g===1?'Probable error':'Matiz'}),
+      h('h3',{text:d.t}),
+      h('div',{class:'r'},h('span',{class:'lab',text:'Tus apuntes'}),h('p',{text:d.ap})),
+      h('div',{class:'r'},h('span',{class:'lab',text:'Lo habitual'}),h('p',{text:d.mas}))
+    )),
+    h('p',{class:'note',text:'Estoy bastante seguro de estos puntos, pero no tengo tu libro delante. Si tu profesor enseña otra versión, estudia la suya.'})
+  );
+  $('#nDudas').textContent=String(DUDAS.length);
+}
+function init(){
+  loadLocal();
+  renderEsquema();
+  renderFechas();
+  renderTarjetas();
+  renderTest();
+  renderDudas();
+  renderStats();
+  $$('.tabs button').forEach(b=>b.addEventListener('click',()=>goTab(b.dataset.tab)));
+  goTab(S.tab);
+  initRemote();
+}
+init();
+</script>
+
+</body></html>
